@@ -37,7 +37,7 @@
   "software": {
     "type": "Obs",
     "host": "changeip",
-    "password": "BQWmmegBrFN5B3fl",
+    "password": "password of OBS websocket goes here",
     "port": 4465
     },
     "chat": {
