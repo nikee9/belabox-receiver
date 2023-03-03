@@ -2,12 +2,12 @@
 
 [ ! -f $PWD/config.json ] && echo "config.json missing! (see config.json.example)" && exit 1
 
-docker build . -t belabox-receiver
-docker run --rm -it --name belabox-receiver \
+docker build . -t belabox
+docker run --rm -it --name belabox \
    -p 5000:5000/udp \
    -p 8181:8181/tcp \
    -p 8282:8282/udp \
-   -v $PWD/config.json:/app/config.json belabox-receiver
+   -v $PWD/config.json:/app/config.json belabox
 
 # SLS stats page:
 # http://localhost:8181/stats
