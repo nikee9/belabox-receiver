@@ -1,6 +1,6 @@
 #!/bin/bash
 
-[ ! -f $PWD/config.json ] && echo "config.json missing! (see config.json.example)" && exit 1
+[ ! -f $PWD/config.json ] && echo "config.json missing! (see config.json.template)" && exit 1
 
 docker build . -t belabox
 docker run --rm -it --name belabox \
