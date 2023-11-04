@@ -61,7 +61,7 @@ RUN set -xe; \
     LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH make -j4; \
     cp bin/* /usr/local/bin;
 
-FROM debian:bullseye-backports
+FROM debian:bullseye-slim
 
 RUN set -xe; \
     apt-get update; \
@@ -70,8 +70,6 @@ RUN set -xe; \
     ca-certificates \
     git \
     lsof \
-    nodejs \
-    npm \
     procps \
     supervisor \
     ;
