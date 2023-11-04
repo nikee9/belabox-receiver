@@ -1,0 +1,11 @@
+version: "3.8"
+
+services:
+  belabox-server:
+    image: nikee9/belabox-server:latest
+    restart: unless-stopped
+    ports:
+      - "5000:5000/udp"
+      - "8181:8181/tcp"
+      - "8282:8282/udp"
+  

@@ -61,9 +61,6 @@ RUN set -xe; \
     LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH make -j4; \
     cp bin/* /usr/local/bin;
 
-
-# runtime container with NOALBS
-#
 FROM debian:bullseye-backports
 
 RUN set -xe; \
@@ -90,13 +87,6 @@ COPY files/logprefix /usr/local/bin/logprefix
 RUN set -xe; \
     ldconfig; \
     chmod 755 /usr/local/bin/logprefix;
-
-ARG NOALBS_VERSION=v2.7.3
-RUN set -xe; \
-    git clone https://github.com/715209/nginx-obs-automatic-low-bitrate-switching /app; \
-    cd /app; \
-    git checkout $NOALBS_VERSION; \
-    npm install fast-fuzzy node-fetch node-media-server obs-websocket-js signale string-template ws xml2js;
 
 EXPOSE 5000/udp 8181/tcp 8282/udp
 
